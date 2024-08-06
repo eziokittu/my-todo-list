@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Todo = ({ task, deleteTodo, editTodo, toggleComplete }) => {
   return (
-    <div className=" w-full relative flex gap-1 items-center justify-center ">
+    <div className=" w-full relative flex gap-2 items-center justify-center bg-[#230e28] rounded-xl">
 
       {/* completion tick mark */}
       {task.completed && (
@@ -13,18 +13,18 @@ export const Todo = ({ task, deleteTodo, editTodo, toggleComplete }) => {
 
       {/* Task */}
       <p
-        className={`${task.completed ? 'line-through text-[#ffe4f950]' : ''} cursor-pointer w-full  mr-auto break-all whitespace-pre-wrap  p-2 rounded-xl bg-[#3d2243] text-[#ffe4f9]`}
+        className={`${task.completed ? 'line-through text-[#ffe4f950]' : ''} cursor-pointer w-full m-2 mr-auto break-all whitespace-pre-wrap  p-2 rounded-xl bg-[#3d2243] text-[#ffe4f9]`}
         onClick={() => toggleComplete(task.id)}
       >
         {task.task}
       </p>
 
       {/* Buttons */}
-      <div className="flex xsm:space-x-2 ">
+      <div className="flex space-x-2 mr-2 my-2">
         {/* Edit button */}
-        <button className="bg-[#230e28] hover:bg-[#ffe4f9] text-[#ffe4f9] hover:text-[#230e28] p-[2px] xsm:p-2 rounded-full" onClick={() => editTodo(task.id)}>
+        <button className="bg-[#230e28] hover:bg-[#ffe4f9] text-[#ffe4f9] hover:text-[#230e28] p-2 rounded-full" onClick={() => editTodo(task.id)}>
           <svg
-            className="w-5 xsm:w-8 h-5 xsm:h-8"
+            className="w-8 h-8"
             viewBox="0 0 24 24"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -43,9 +43,9 @@ export const Todo = ({ task, deleteTodo, editTodo, toggleComplete }) => {
         </button>
 
         {/* Delete button */}
-        <button className="bg-[#230e28] hover:bg-[#ffe4f9] text-[#ffe4f9] hover:text-[#230e28] p-[2px] xsm:p-2 rounded-full" onClick={() => deleteTodo(task.id)}>
+        <button className="bg-[#230e28] hover:bg-[#ffe4f9] text-[#ffe4f9] hover:text-[#230e28] p-2 rounded-full" onClick={() => deleteTodo(task.id)}>
           <svg
-            className="w-5 xsm:w-8 h-5 xsm:h-8"
+            className="w-8 h-8"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

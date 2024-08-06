@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { TodoWrapper } from './components/TodoWrapper';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Background from './components/Background';
 
@@ -9,7 +9,7 @@ function App() {
     <>
       <Background />
       <BrowserRouter>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           {/* All routes will hit this */}
           <Route path="*" element={<TodoWrapper />} />

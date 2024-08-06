@@ -209,7 +209,7 @@ export const TodoWrapper = () => {
 	}, [newListName]);
 
 	return (
-		<div className="relative z-10 mt-10 flex flex-col justify-center items-center bg-[#ffe4f9] px-2 sm:px-4 font-Roboto">
+		<div className="relative z-10 mt-10 flex flex-col justify-center items-center bg-[#ffe4f9] px-1 sm:px-2 font-Roboto">
 
 			{/* Add a new todo list button */}
 			<TodoListAddButton addTodoList={addTodoList} />
@@ -226,7 +226,7 @@ export const TodoWrapper = () => {
 
 			{/* Display the selected todo list */}
 			{currentListName && (
-				<div className="flex flex-col items-center bg-[#230e28] text-[#ffe4f9] p-4 rounded-xl shadow-md w-full sm:w-[650px]">
+				<div className="flex flex-col items-center bg-[#230e28] text-[#ffe4f9] p-2 xsm:p-4 rounded-xl shadow-md w-full sm:w-[650px]">
 
 					{/* Todo list name */}
 					<div className="w-full">
@@ -258,20 +258,20 @@ export const TodoWrapper = () => {
 									</button>
 								</div>
 							) : (
-								<div className="flex space-x-2 w-full items-center">
+								<div className="flex xsm:space-x-2 w-full items-center">
 									{/* todo list heading */}
-									<p className="text-lg sm:text-2xl font-bold w-full p-2 underline underline-offset-4 break-all whitespace-pre-wrap">{currentListName}</p>
+									<p className="text-lg sm:text-2xl font-bold w-full  underline underline-offset-4 break-all whitespace-pre-wrap">{currentListName}</p>
 
 									{/* Edit button */}
 									<button
-										className="bg-[#230e28] hover:bg-[#ffe4f9] text-[#ffe4f9] hover:text-[#230e28] p-2 rounded-full ml-auto w-fit h-fit"
+										className="bg-[#230e28] hover:bg-[#ffe4f9] text-[#ffe4f9] hover:text-[#230e28] p-[2px] rounded-full ml-auto w-fit h-fit"
 										onClick={() => {
 											setEditingListName(currentListName);
 											setNewListName(currentListName);
 										}}
 									>
 										<svg
-											className="w-8 h-8"
+											className="w-5 h-5 xsm:w-8 xsm:h-8"
 											viewBox="0 0 24 24"
 											fill="currentColor"
 											xmlns="http://www.w3.org/2000/svg"
@@ -291,11 +291,11 @@ export const TodoWrapper = () => {
 
 									{/* Delete Button */}
 									<button
-										className="bg-[#230e28] hover:bg-[#ffe4f9] text-[#ffe4f9] hover:text-[#230e28] p-2 rounded-full ml-auto w-fit h-fit"
+										className="bg-[#230e28] hover:bg-[#ffe4f9] text-[#ffe4f9] hover:text-[#230e28] p-[2px] rounded-full ml-auto w-fit h-fit"
 										onClick={() => deleteTodoList(currentListName)}
 									>
 										<svg
-											className="w-8 h-8"
+											className="w-5 h-5 xsm:w-8 xsm:h-8"
 											viewBox="0 0 24 24"
 											fill="none"
 											xmlns="http://www.w3.org/2000/svg"
@@ -365,7 +365,7 @@ export const TodoWrapper = () => {
 					<TodoForm addTodo={(todo) => addTodo(currentListName, todo)} />
 
 					{/* Displaying all sorted todo items */}
-					<div className="bg-[#ffe4f9] rounded-xl p-2 flex flex-col gap-2 w-full mt-4">
+					<div className="flex flex-col gap-1 w-full mt-4">
 						{sortTodos(todoLists.find(list => list.name === currentListName)?.todos, todoLists.find(list => list.name === currentListName)?.sortBy).map((todo) =>
 							todo.isEditing ? (
 								<EditTodoForm
